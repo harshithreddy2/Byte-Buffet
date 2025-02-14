@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            background-image: url('image3.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00796b;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #00796b;
+        }
+
+        .contact-item p {
+            margin: 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .contact-item:hover {
+            background-color: #b2ebf2;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .social-media a {
+            text-decoration: none;
+        }
+
+        .social-media img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s;
+        }
+
+        .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            margin-top: 40px;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+
+        .team-member h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #00796b;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            background-color: #e0f7fa;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+        .team-member p {
+            margin: 5px 0 0;
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Contact Us</h1>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <p>Mail: bytebuffet@gmail.com</p>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <p>Contact No: +91 9640551240</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/harshith.reddy__" target="_blank">
+                <img src="insta.JPEG" alt="Instagram">
+            </a>
+            <a href="https://twitter.com/Harshureddy01" target="_blank">
+                <img src="x.PNG" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/dharshith.reddy.73" target="_blank">
+                <img src="Facebook.PNG" alt="Facebook">
+            </a>
+        </div>
+
+        <div class="team-section">
+            <h1>Our Team</h1>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="passport.webp" alt="Team Member 1">
+                    <h3>D.Harshith</h3>
+                </div>
+                <div class="team-member">
+                    <img src="passport1.png" alt="Team Member 2">
+                    <h3>T.Akshara</h3>
+                </div>
+                <div class="team-member">
+                    <img src="passport1.png" alt="Team Member 3">
+                    <h3>P.Anusha</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

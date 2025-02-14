@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('cart.avif') no-repeat center center fixed; 
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            backdrop-filter: blur(8px);
+        }
+
+        img {
+            max-width: 200px;  
+            height: auto;
+            margin-bottom: 30px;  
+        }
+
+        h1 {
+            color: #e7e7e7;
+            margin-top: 30px;
+            font-size: 2.8rem;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); 
+        }
+
+        table {
+            width: 85%;
+            max-width: 950px;
+            margin: 30px 0;
+            border-collapse: collapse;
+            background-color: rgba(255, 255, 255, 0.9); 
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        thead {
+            background-color: #ff6f61;  
+            color: #fff;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            font-size: 1.2rem;
+        }
+
+        tfoot {
+            background-color: #f8f9fa;  
+        }
+
+        tfoot td {
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-top: 2px solid #ddd;
+        }
+
+        #totalAmount {
+            color: #ff6f61; 
+            font-size: 1.4rem;
+        }
+
+        #proceedButton {
+            background-color: #32cd32; 
+            color: white;
+            border: none;
+            padding: 16px 28px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 50px;
+        }
+
+        #proceedButton:hover {
+            background-color: #28a745;  
+            transform: scale(1.05);
+        }
+
+        #proceedButton:active {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+
+    <img src="logo.png" alt="Byte Buffet Logo">  
+
+    <h1>Selected Items</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="itemTable">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Total Amount:</strong></td>
+                <td id="totalAmount">₹0.00</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button id="proceedButton" onclick="proceedNext()">Proceed Next</button>
+
+    <script>
+        window.onload = function() {
+            const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+
+            const itemTable = document.getElementById('itemTable');
+            let totalAmount = 0;
+
+            selectedItems.forEach((item) => {
+                const price = parseFloat(item.price.replace('₹', ''));
+                const quantity = parseInt(item.quantity);
+                const total = price * quantity;
+
+                totalAmount += total;
+
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.item}</td>
+                    <td>₹${price.toFixed(2)}</td>
+                    <td>${quantity}</td>
+                    <td>₹${total.toFixed(2)}</td>
+                `;
+                itemTable.appendChild(row);
+            });
+
+            document.getElementById('totalAmount').textContent = `₹${totalAmount.toFixed(2)}`;
+        };
+
+        function proceedNext() {
+            window.location.href = 'details.html';
+        }
+    </script>
+</body>
+</html>

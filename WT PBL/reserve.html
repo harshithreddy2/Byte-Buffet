@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table - Byte Buffet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: url('image2.jpg') no-repeat center center/cover;
+        }
+
+        .reserve-table {
+            max-width: 400px;
+            margin: 4rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .reserve-table .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .reserve-table .logo img {
+            max-height: 50px;
+        }
+
+        .reserve-table h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .reserve-table label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .reserve-table select,
+        .reserve-table input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .reserve-table button {
+            width: 100%;
+            background: #e8491d;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .reserve-table button:hover {
+            background: #c73709;
+        }
+    </style>
+</head>
+<body>
+    <div class="reserve-table">
+        <div class="logo">
+            <img src="logo.png" alt="Byte Buffet Logo">
+        </div>
+        <h3>Reserve Table</h3>
+        <form action="f3.jsp" method="POST">
+            <label for="location">Location</label>
+            <select id="location" name="location" required>
+                <option value="">Select Location</option>
+                <option value="Uppal">Uppal</option>
+                <option value="LB Nagar">LB Nagar</option>
+                <option value="Madhapur">Madhapur</option>
+                <option value="Miyapur">Miyapur</option>
+                <option value="Ameerpet">Ameerpet</option>
+            </select>
+            
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="session">Session</label>
+            <select id="session" name="session" required>
+                <option value="">Select Session</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+            
+            <label for="time">Available Time Slots</label>
+            <select id="time" name="time" required>
+                <option value="">Select Time</option>
+                <option value="12:00pm to 01:30pm">12:00pm - 1:30pm</option>
+                <option value="02:00pm to 03:30pm">02:00pm - 3:30pm</option>
+                <option value="07:00pm to 08:30pm">07:00pm - 8:30pm</option>
+                <option value="09:00pm to 10:30pm">09:00pm - 10:30pm</option>
+            </select>
+            
+            <button type="submit">Reserve</button>
+        </form>
+    </div>
+
+    <script>
+        // Disable past dates
+        const today = new Date().toISOString().split("T")[0];
+        document.getElementById("date").setAttribute("min", today);
+    </script>
+</body>
+</html>

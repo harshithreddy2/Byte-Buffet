@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmed - Byte Buffet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .confirmation-container {
+            max-width: 600px;
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .confirmation-container h1 {
+            color: #28a745;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .confirmation-container h1::before {
+            font-size: 2.5rem;
+            margin-right: 0.5rem;
+            color: #28a745;
+        }
+
+        .confirmation-container p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        .confirmation-container .reservation-details {
+            margin: 2rem 0;
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .reservation-details p {
+            margin: 0.5rem 0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .confirmation-container a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #e8491d;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .confirmation-container a:hover {
+            background: #c73709;
+        }
+
+        .confirmation-container .logo img {
+            width: 120px;
+            margin-bottom: 1.5rem;
+        }
+
+        .confirmation-container .thank-you-message {
+            font-style: italic;
+            color: #777;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="logo">
+            <img src="logo.png" alt="Byte Buffet Logo">
+        </div>
+        <h1>Reservation Confirmed!</h1>
+        <p>Thank you for choosing Byte Buffet. Your table reservation has been confirmed, and we can’t wait to provide you with a delightful dining experience.</p>
+        
+        
+        <p>For any changes or special requests, feel free to contact us at <strong>@bytebuffet.com</strong> or call us at <strong>(91) 9640551240</strong>.</p>
+        
+        <a href="a1.html">Back to Home</a>
+        <p class="thank-you-message">We look forward to serving you at Byte Buffet!</p>
+    </div>
+</body>
+</html>

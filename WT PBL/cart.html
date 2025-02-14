@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Buffet - Cart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            overflow-x: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 1rem;
+            text-align: left;
+        }
+        th {
+            background-color: #e8491d;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        .total-amount {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .button-container input[type="button"] {
+            background: #e8491d;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .button-container input[type="button"]:hover {
+            background: #c73709;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Byte Buffet Logo">
+            <h1>Your Cart</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Order Summary</h1>
+        <table id="cartTable">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <h2 id="totalAmount">Total: ₹0</h2>
+    </div>
+    <div class="button-container">
+        <input type="button" value="Proceed to Checkout">
+    </div>
+
+    <script>
+        function loadCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartTableBody = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+            let totalAmount = 0;
+
+            cartItems.forEach(item => {
+                const { name, price, quantity } = item;
+                const subtotal = price * quantity;
+                totalAmount += subtotal;
+
+                const row = cartTableBody.insertRow();
+                row.innerHTML = `
+                    <td>${name}</td>
+                    <td>₹${price.toFixed(2)}</td>
+                    <td>${quantity}</td>
+                    <td>₹${subtotal.toFixed(2)}</td>
+                `;
+            });
+
+            document.getElementById('totalAmount').textContent = `Total: ₹${totalAmount.toFixed(2)}`;
+        }
+
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

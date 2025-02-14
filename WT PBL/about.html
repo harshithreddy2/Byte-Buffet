@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Byte Buffet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: url('image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 4px;
+            background: #e8491d;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        section h2:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .content img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="content">
+            <img src="logo.png" alt="Our Restaurant">
+            <p>Welcome to Byte Buffet, where culinary excellence meets warm hospitality. Since our inception in 2005, we have been committed to providing our guests with a memorable dining experience through our innovative menu and exceptional service. At Byte Buffet, we believe in the power of good food to bring people together, and we strive to create a welcoming atmosphere for everyone.</p>
+            <p>Our mission is to delight our guests with a diverse menu that showcases the finest ingredients and flavors from around the world. Whether you’re here for a casual meal with friends, a special occasion, or a business lunch, we are dedicated to making your experience extraordinary.</p>
+            <p>Meet our talented team of chefs and staff who work tirelessly to ensure that every dish is prepared to perfection. We are passionate about what we do and are always excited to share our love for food with our guests.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Byte Buffet. All rights reserved.</p>
+    </footer>
+</body>
+</html>

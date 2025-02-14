@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Buffet - Details and Location</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #000000;
+            color: white;
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header .logo img {
+            max-height: 50px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #ff5722;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .details-form label {
+            display: block;
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+        .details-form input[type="text"],
+        .details-form input[type="email"],
+        .details-form input[type="tel"],
+        .details-form select {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease-in-out;
+        }
+        .details-form input[type="text"]:focus,
+        .details-form input[type="email"]:focus,
+        .details-form input[type="tel"]:focus,
+        .details-form select:focus {
+            border-color: #ff5722;
+            outline: none;
+        }
+        .details-form button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+            width: 100%;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .details-form button:hover {
+            background-color: #e64a19;
+            transform: translateY(-2px);
+        }
+        .details-form button:active {
+            background-color: #d84315;
+            transform: translateY(0);
+        }
+        .details-form button a {
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Byte Buffet Logo">
+            Byte Buffet
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Enter Your Details and Location</h1>
+
+        <form class="details-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Delivery Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="location">Select Location:</label>
+            <select id="location" name="location" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Uppal">Uppal</option>
+                <option value="LB Nagar">LB Nagar</option>
+                <option value="Madhapur">Madhapur</option>
+                <option value="Miyapur">Miyapur</option>
+                <option value="Ameerpet">Ameerpet</option>
+            </select>
+
+            <button type="button">
+                <a href="payment.html">Next: Payment</a>
+            </button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 Byte Buffet. All Rights Reserved.
+    </footer>
+</body>
+</html>

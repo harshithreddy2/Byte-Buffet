@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #e74c3c;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 150px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+            padding: 20px;
+            background: linear-gradient(to bottom, #fff, #f7f7f7);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .dish {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .dish:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .dish img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-left: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .dish img:hover {
+            transform: scale(1.1);
+        }
+
+        .dish-description {
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        .dish-description strong {
+            font-size: 1.2em;
+            color: #e67e22;
+        }
+
+        .drinks {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, #fff, #f7f7f7);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .drink-item {
+            display: inline-block;
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .drink-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .drink-item img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .drink-item img:hover {
+            transform: scale(1.1);
+        }
+
+        .drink-description p {
+            margin: 0;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .drink-description strong {
+            font-size: 1.1em;
+            color: #e67e22;
+        }
+        .icecreams {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, #fff, #f7f7f7);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+    .icecream-item {
+    display: inline-block;
+    margin: 15px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .icecream-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .icecream-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    }
+
+    .icecream-item img:hover {
+    transform: scale(1.1);
+    }
+
+    .icecream-description p {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+    }
+
+    .icecream-description strong {
+    font-size: 1.1em;
+    color: #e67e22;
+    }
+    </style>
+</head>
+
+<body>
+
+    <img src="logo.png" alt="Restaurant Logo" class="logo">
+
+    <h1>Menu</h1>
+
+    <div class="category">
+        <h2>Vegetarian</h2>
+
+        <h3>Starters</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Paneer Tikka</strong>
+                <p>Marinated paneer cubes grilled to perfection.</p>
+            </div>
+            <img src="PaneerTikka.jpg" alt="Paneer Tikka">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Veg Spring Rolls</strong>
+                <p>Crispy rolls filled with spiced vegetables.</p>
+            </div>
+            <img src="springrolls.jpg" alt="Veg Spring Rolls">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Hara Bhara Kebab</strong>
+                <p>A blend of spinach, peas, and spices served with mint chutney.</p>
+            </div>
+            <img src="harabharakabab.jpg" alt="Hara Bhara Kebab">
+        </div>
+
+        <h3>Main Course</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Paneer Butter Masala</strong>
+                <p>Paneer cubes in a rich, creamy tomato gravy.</p>
+            </div>
+            <img src="PaneerButterMasala.jpg" alt="Paneer Butter Masala">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Vegetable Biryani</strong>
+                <p>Aromatic basmati rice cooked with mixed vegetables and spices.</p>
+            </div>
+            <img src="vegetable_biryani.jpg" alt="Vegetable Biryani">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Dal Makhani</strong>
+                <p>Slow-cooked black lentils in a creamy gravy.</p>
+            </div>
+            <img src="dal_makhani.jpeg" alt="Dal Makhani">
+        </div>
+
+        <h3>Desserts</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Gulab Jamun</strong>
+                <p>Soft, spongy dumplings soaked in sugar syrup.</p>
+            </div>
+            <img src="gulab_jamun.jpeg" alt="Gulab Jamun">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Rasmalai</strong>
+                <p>Creamy, soft paneer balls in saffron-flavored milk.</p>
+            </div>
+            <img src="rasmalai.jpg" alt="Rasmalai">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Kesar Pista Kulfi</strong>
+                <p>Traditional Indian ice cream flavored with saffron and pistachios.</p>
+            </div>
+            <img src="kesar_pista_kulfi.jpeg" alt="Kesar Pista Kulfi">
+        </div>
+    </div>
+
+    <div class="category">
+        <h2>Non-Vegetarian</h2>
+
+        <h3>Starters</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Chicken Tikka</strong>
+                <p>Spiced and grilled chicken pieces served with mint chutney.</p>
+            </div>
+            <img src="chicken_tikka.jpg" alt="Chicken Tikka">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Mutton Seekh Kebab</strong>
+                <p>Minced mutton skewers with aromatic spices.</p>
+            </div>
+            <img src="mutton_seekh_kebab.jpg" alt="Mutton Seekh Kebab">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Prawn Tempura</strong>
+                <p>Crispy prawns fried in a light batter.</p>
+            </div>
+            <img src="prawn_tempura.jpg" alt="Prawn Tempura">
+        </div>
+
+        <h3>Main Course</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Chicken Dum Biryani</strong>
+                <p>Fragrant basmati rice layered with marinated chicken, slow-cooked to perfection.</p>
+            </div>
+            <img src="chicken_dum_biryani.webp" alt="Chicken Dum Biryani">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Mutton Rogan Josh</strong>
+                <p>Slow-cooked mutton in a rich, flavorful gravy.</p>
+            </div>
+            <img src="mutton_rogan_josh.jpg" alt="Mutton Rogan Josh">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Fish Curry</strong>
+                <p>Fresh fish simmered in a tangy coconut curry.</p>
+            </div>
+            <img src="fish_curry.webp" alt="Fish Curry">
+        </div>
+
+        <h3>Desserts</h3>
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Shahi Tukda</strong>
+                <p>Rich bread pudding topped with rabri and dry fruits.</p>
+            </div>
+            <img src="shahi_tukda.jpg" alt="Shahi Tukda">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Phirni</strong>
+                <p>Creamy rice pudding flavored with saffron and cardamom.</p>
+            </div>
+            <img src="phirni.jpg" alt="Phirni">
+        </div>
+
+        <div class="dish">
+            <div class="dish-description">
+                <strong>Chocolate Mousse</strong>
+                <p>A rich and creamy chocolate delight.</p>
+            </div>
+            <img src="chocolate_mousse.jpg" alt="Chocolate Mousse">
+        </div>
+    </div>
+
+    <div class="drinks">
+        <h2>Drinks</h2>
+
+        <div class="drink-item">
+            <img src="mango_lassi.jpg" alt="Mango Lassi">
+            <div class="drink-description">
+                <p><strong>Mango Lassi</strong></p>
+                <p>A refreshing blend of yogurt and ripe mangoes.</p>
+            </div>
+        </div>
+
+        <div class="drink-item">
+            <img src="mocktail.jpg" alt="Masala Chai">
+            <div class="drink-description">
+                <p><strong>Mocktail</strong></p>
+                <p>A colorful and refreshing non-alcoholic cocktail.</p>
+            </div>
+        </div>
+
+        <div class="drink-item">
+            <img src="mint_mojito.jpeg" alt="Mint Mojito">
+            <div class="drink-description">
+                <p><strong>Mint Mojito</strong></p>
+                <p>A cool and refreshing drink with mint leaves and lime.</p>
+            </div>
+        </div>
+    </div>
+    <div class="icecreams">
+        <h2>Ice Creams</h2>
+    
+        <div class="icecream-item">
+            <img src="vanilla_icecream.webp" alt="Vanilla Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Vanilla Ice Cream</strong></p>
+                <p>Classic and creamy vanilla ice cream.</p>
+            </div>
+        </div>
+    
+        <div class="icecream-item">
+            <img src="chocolate_icecream.jpeg" alt="Chocolate Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Chocolate Ice Cream</strong></p>
+                <p>Rich and indulgent chocolate ice cream.</p>
+            </div>
+        </div>
+    
+        <div class="icecream-item">
+            <img src="strawberry_icecream.jpg" alt="Strawberry Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Strawberry Ice Cream</strong></p>
+                <p>Sweet and fruity strawberry ice cream.</p>
+            </div>
+        </div>
+    
+        <div class="icecream-item">
+            <img src="blueberry_icecream.jpeg" alt="Blueberry Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Blueberry Ice Cream</strong></p>
+                <p>Tangy and refreshing blueberry ice cream.</p>
+            </div>
+        </div>
+    
+        <div class="icecream-item">
+            <img src="chocolate_chip_icecream.jpg" alt="Chocolate Chip Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Chocolate Chip Ice Cream</strong></p>
+                <p>Creamy ice cream with crunchy chocolate chips.</p>
+            </div>
+        </div>
+    
+        <div class="icecream-item">
+            <img src="caramel_icecream.jpg" alt="Caramel Ice Cream">
+            <div class="icecream-description">
+                <p><strong>Caramel Ice Cream</strong></p>
+                <p>Rich and smooth caramel-flavored ice cream.</p>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Buffet - Sign In</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('loginback.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="checkbox"] {
+            margin: 10px 0;
+        }
+
+        input[type="submit"] {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ff7f3f;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 50%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff5722;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .signup-link a {
+            color: #ff7f3f;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="logo.png" alt="Byte Buffet Logo">
+        </div>
+        <h1><b>Sign In to Byte Buffet</b></h1>
+        <h2>Welcome back!</h2>
+        <form action="f2.jsp" method="post">
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required>
+            
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required>
+            
+            <input type="submit" value="Log In">
+            
+            <div class="signup-link">
+                <h2>Don't have an account? <a href="projectsignup.html"><u>Sign Up</u></a></h2>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

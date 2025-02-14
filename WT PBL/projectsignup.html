@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-image: url('loginback.jpg');
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .register {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        h2 {
+            color: #333;
+            font-size: xx-large;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: large;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            font-size: large;
+            margin-bottom: 8px;
+            color: #444;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+            outline: none;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 0;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register">
+        <form action="f1.jsp">
+            <center>
+                <img src="logo.png" alt="Logo">
+
+                <h2><u>Sign Up</u></h2>
+                <p>Fill this to create an account</p>
+
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter your Username" name="name" required>
+
+                <label><b>E-mail</b></label>
+                <input type="email" placeholder="Enter your e-mail" name="email" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Set password" name="password" required>
+
+                <input type="submit" value="Sign-Up">
+            </center>
+        </form>
+    </div>
+</body>
+</html>

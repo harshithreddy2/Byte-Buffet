@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byte Buffet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f8ff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            height: 30px
+        }
+        nav a:hover {
+            text-decoration: underline; 
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            max-height: 50px;
+            margin-right: 10px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        header ul li {
+            margin-left: 1rem;
+        }
+
+        header ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s;
+        }
+
+        header ul li a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 0%;
+            top: 0;
+            left: 0;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: -1;
+            transition: height 0.3s;
+        }
+
+        header ul li a:hover {
+            color: #333;
+        }
+
+        header ul li a:hover::before {
+            height: 100%;
+        }
+
+        header .location-select {
+            background: #555;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-left: 1rem;
+        }
+
+        header .login-btn, .delivery-btn {
+            background: #e8491d;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 1rem;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        header .login-btn:hover, .delivery-btn:hover {
+            background: #c73709;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero {
+            background-image: url('backrestaurant.avif');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            background: #e8491d;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .btn:hover {
+            background: #c73709;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 4px;
+            background: #e8491d;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        section h2:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        section p {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .menu-item {
+            margin-bottom: 2rem;
+        }
+
+        .menu-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Byte Buffet Logo">
+            </div>
+            <ul>
+                <li style="--i: 1;"><a href="#home">Home</a></li>
+                <li style="--i: 2;"><a href="about.html">About</a></li>
+                <li style="--i: 3;"><a href="menu2.html">Menu</a></li>
+                <li style="--i: 4;"><a href="reserve.html">Reserve Table</a></li>
+                <li style="--i: 5;"><a href="contact.html">Contact</a></li>
+                <li style="--i: 6;">
+                    <select class="location-select">
+                        <option value="">Select Location</option>
+                        <option value="Uppal">Uppal</option>
+                        <option value="LB Nagar">LB Nagar</option>
+                        <option value="Madhapur">Madhapur</option>
+                        <option value="Miyapur">Miyapur</option>
+                        <option value="Ameerpet">Ameerpet</option>
+                    </select>
+                </li>
+                <li style="--i: 7;"><a href="selectionpage.html" class="delivery-btn">Delivery</a></li>
+                <li style="--i: 8;"><a href="projectsignin.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Byte Buffet</h1>
+        <p>Experience the best BBQ in town</p>
+        <p class="quote">Grill, Eat, Chill, Repeat</p>
+        <a href="menu2.html" class="btn">Explore Our Menu</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Byte Buffet. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

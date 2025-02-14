@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            background: url('cart.avif') no-repeat center center fixed; 
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #444;
+        }
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 150px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .item:last-child {
+            border-bottom: none;
+        }
+        label {
+            font-size: 16px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Byte Buffet Logo" class="logo">
+    <div class="container">
+        <h1>Select Items</h1>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Paneer Tikka" data-price="₹189"> Paneer Tikka (₹189
+                )
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+        
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Veg Spring Rolls" data-price="₹179"> Veg Spring Rolls (₹179)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Hara Bhara Kebab" data-price="₹210"> Hara Bhara Kebab (₹210)
+                
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+        
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Paneer Butter Masala" data-price="₹219"> Paneer Butter Masala (₹219)
+                
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+        
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Dal Makhani" data-price="₹249"> Dal Makhani (₹249
+                )
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Gulab Jamun" data-price="₹119"> Gulab Jamun (₹119
+                )
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Rasmalai" data-price="₹129">Rasmalai (₹129
+                )
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Kesar Pista Kulfi" data-price="₹99">Kesar Pista Kulfi (₹99
+                )
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Chicken Tikka" data-price="₹239">Chicken Tikka
+                (₹239)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Mutton Seekh Kebab" data-price="₹269"> Mutton Seekh Kebab
+                (₹269)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Prawn Tempura" data-price="₹289"> Prawn Tempura
+                (₹289)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Chicken Dum Biryani" data-price="₹299">Chicken Dum Biryani
+                (₹299)                
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Mutton Rogan Josh" data-price="₹319"> Mutton Rogan Josh
+                (₹319)                
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Fish Curry" data-price="₹279"> Fish Curry
+                (₹279)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Shahi Tukda" data-price="₹219"> Shahi Tukda
+                (₹219)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Phirni" data-price="₹209"> Phirni
+                (₹209)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Chocolate Mousse" data-price="₹199">Chocolate Mousse
+                (₹199)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Mango Lassi" data-price="₹119"> Mango Lassi
+                (₹119)                
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Mint Lemonade" data-price="₹159"> Mint Lemonade
+                (₹159)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="item" value="Mocktail" data-price="₹169"> Mocktail
+                (₹169)
+            </label>
+            <input type="number" name="quantity" value="0" min="0">
+        </div>
+
+
+        
+        <button onclick="saveSelection()">Save Selection</button>
+    </div>
+
+    <script>
+        function saveSelection() {
+            const selectedItems = [];
+            const checkboxes = document.querySelectorAll('input[name="item"]:checked');
+
+            checkboxes.forEach((checkbox) => {
+                const item = checkbox.value;
+                const price = checkbox.getAttribute('data-price');
+                const quantity = checkbox.parentElement.nextElementSibling.value;
+
+                selectedItems.push({ item, price, quantity });
+            });
+
+            localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+
+            window.location.href = 'selectiondisplay.html';
+        }
+    </script>
+</body>
+</html>
